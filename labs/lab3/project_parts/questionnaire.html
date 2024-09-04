@@ -15,7 +15,7 @@
     </section>
     <form action="" method="post" enctype="multipart/form-data">
         <fieldset>
-            <legend>Заповніть інформацію про себе:</legend>
+            <legend align="center">Заповніть інформацію про себе:</legend>
             <p>
                 <label>
                     Ім'я:
@@ -54,11 +54,13 @@
                 </label>
             </p>
             <p>
-                <label>
+                <label for="birthdate">
                     Дата народження:
-                    <input name="date" value="11.12.2024" type="date" placeholder="Виберіть вашу дату народження"
-                           required tabindex="6">
+
                 </label>
+                <input id="birthdate" name="date" value="11.12.2024" type="date"
+                       placeholder="Виберіть вашу дату народження"
+                       required tabindex="6">
             </p>
             <p>
                 <label>
@@ -136,7 +138,7 @@
             <p>
                 <label>
                     Морозиво:
-                    <input name="ice-cream" value="ice-cream" list="data-list" placeholder="Оберіть варіант"/>
+                    <input name="Шоколадне" value="ice-cream" list="data-list" placeholder="Оберіть варіант"/>
                     <datalist id="data-list">
                         <option name="chocolate" value="Шоколадне"></option>
                         <option name="coconut" value="Кокосове"></option>
