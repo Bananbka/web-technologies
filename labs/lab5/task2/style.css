@@ -1,38 +1,36 @@
-table {
-    border-collapse: separate;
-    table-layout: fixed;
-    color: #FCF8F3;
+*{
+    box-sizing: border-box;
 }
-
-td {
-    padding: 20px 20px;
+td,th{
+    padding: 20px;
     text-align: center;
 }
+table{
+    border-collapse: separate;
+    table-layout: fixed;
+    width: 50%;
+}
+thead > tr{
+    background: linear-gradient(to right,
+    rgb(228, 242, 219) 20%,
+    rgb(189, 229, 183) 20%, rgb(189, 229, 183) 40%,
+    rgb(168, 217, 148) 40%, rgb(168, 217, 148) 60%,
+    rgb(73, 148, 52) 60%, rgb(73, 148, 52) 80%,
+    rgb(47, 99, 35) 80%, rgb(47, 99, 35) 100%);
+}
 
-tbody tr:nth-child(1) td:nth-child(1){
-    background-color: #d4eaca;
+tbody > tr > th{
+    background: linear-gradient(to right,
+    rgb(106, 192, 77),
+    rgb(106, 192, 77)
+    );
 }
-tbody tr:nth-child(1) td:nth-child(2) {
-    background-color: #D4E7C5;
-}
-tbody tr:nth-child(1) td:nth-child(3) {
-    background-color: #BFD8AF;
-}
-tbody tr:nth-child(1) td:nth-child(4) {
-    background-color: #99BC85;
-}
-tbody tr:nth-child(1) td:nth-child(5) {
-    background-color: #799967;
-}
-tbody td:nth-child(1) {
-    background-color: #8fae7e;
-}
-tbody tr:nth-child(2n+2) {
-    background-color: #bfe0ac;
-}
-tbody tr:nth-child(2n+1) {
-    background-color: #c8e3b8;
-}
-tbody tr:nth-child(1) {
-    font-weight: bold;
+tbody {
+    background: repeating-linear-gradient(
+            to bottom,
+            rgb(196, 229, 183) 20%,
+            rgb(196, 229, 183) 40%,
+            rgb(69, 159, 17) 40%,
+            rgb(69, 159, 17) 60%
+    );
 }
