@@ -7,17 +7,22 @@ html, body { margin: 0; padding: 0; height: 100%; }
 
 header {
     position: sticky;
+    z-index: 1000;
     top: 0;
 }
 .head {
-    padding: 10px;
-    display: flex;
+    padding: 0;
+    display: inline-block;
+    position: relative;
     align-items: center;
     background-color: #fa9000;
     border-radius: 0 0 30px 30px;
+    width: 100%;
+    margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.37) 0 1px 5px 2px;
 }
 .logo{
+    margin: 10px;
     display: inline-block;
     padding: 15px;
     background-color: white;
@@ -27,8 +32,13 @@ header {
     width: 60px;
 }
 .navigation {
+    float: right;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
     user-select: none;
-    margin-left: auto;
     list-style: none;
 }
 .navigation li {
@@ -66,21 +76,25 @@ div {
     padding: 20px;
 }
 
+
+
 .div-wrapper{
     margin: 100px 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+    display: inline-block;
+    text-align: justify;
+    position: relative;
 }
 
 .div-border {
-    display: block;
-    flex-basis: 300px;
+    display: inline-block;
+    width: 300px;
     padding: 10px;
+    margin: 50px;
+    vertical-align: top;
 }
+
+
+
 
 .border-type-1 {
     border: 5px solid #fa9000;
@@ -117,7 +131,19 @@ div {
     border: double #ffbd67 15px;
     border-image: url("../img/task2/border.png") 15 / 15px round;
 }
-.border-type-9 {}
-.border-type-10 {}
-.border-type-11 {}
-.border-type-12 {}
+.border-type-9 {
+    border: double #ffbd67 15px;
+    border-image: url("../img/task2/border.png") 27 / 15px round;
+}
+.border-type-10 {
+    border: double #ffbd67 15px;
+    border-image: url("../img/task2/border3.png") 20 10 / 20px stretch;
+}
+.border-type-11 {
+    border: double #ffbd67 15px;
+    border-image: url("../img/task2/border3.png") 9 25 / 20px round;
+}
+.border-type-12 {
+    border: double #ffbd67 15px;
+    border-image: url("../img/task2/border3.png") 5 17 / 20px stretch;
+}

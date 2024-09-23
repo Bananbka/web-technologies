@@ -7,17 +7,22 @@ html, body { margin: 0; padding: 0; height: 100%; }
 
 header {
     position: sticky;
+    z-index: 1000;
     top: 0;
 }
 .head {
-    padding: 10px;
-    display: flex;
+    padding: 0;
+    display: inline-block;
+    position: relative;
     align-items: center;
     background-color: #fa9000;
     border-radius: 0 0 30px 30px;
+    width: 100%;
+    margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.37) 0 1px 5px 2px;
 }
 .logo{
+    margin: 10px;
     display: inline-block;
     padding: 15px;
     background-color: white;
@@ -27,8 +32,13 @@ header {
     width: 60px;
 }
 .navigation {
+    float: right;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
     user-select: none;
-    margin-left: auto;
     list-style: none;
 }
 .navigation li {
@@ -62,7 +72,6 @@ header {
     cursor: pointer;
     transform: translateY(5px);
 }
-
 div {
     padding: 20px;
 }

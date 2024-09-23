@@ -8,17 +8,22 @@ html, body { margin: 0; padding: 0; height: 100%; }
 
 header {
     position: sticky;
+    z-index: 1000;
     top: 0;
 }
 .head {
-    padding: 10px;
-    display: flex;
+    padding: 0;
+    display: inline-block;
+    position: relative;
     align-items: center;
     background-color: #fa9000;
     border-radius: 0 0 30px 30px;
+    width: 100%;
+    margin: 0 auto;
     box-shadow: rgba(0, 0, 0, 0.37) 0 1px 5px 2px;
 }
 .logo{
+    margin: 10px;
     display: inline-block;
     padding: 15px;
     background-color: white;
@@ -28,8 +33,13 @@ header {
     width: 60px;
 }
 .navigation {
+    float: right;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
     user-select: none;
-    margin-left: auto;
     list-style: none;
 }
 .navigation li {
@@ -44,6 +54,7 @@ header {
     background-color: #ffab37;
     box-shadow: #ae6d14 2px 2px 1px;
     text-decoration: none;
+    color: white;
     font-weight: bold;
 }
 .navigation li:last-child a{
@@ -66,20 +77,12 @@ div {
     padding: 20px;
 }
 
-.flex-column-wrapper {
+.column-wrapper {
     margin: 0 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
 }
-.flex-row-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 100px;
+.row-wrapper {
+    display: inline-block;
+    width: inherit;
 }
 .content-block h3,
 .content-block h4 {
@@ -89,12 +92,20 @@ div {
     text-align: justify;
 }
 .content-block {
-    padding: 20px 60px ;
+    margin: 30px;
+    padding: 20px 60px;
     background-color: #ffab37;
     border-radius: 5rem;
 }
-.inner-content-block {
-    padding: 20px 60px ;
+.inner-content-block{
+    width: 350px;
+    float: left;
+    margin: auto;
+    padding: 20px 60px;
     background-color: #ff9501;
     border-radius: 5rem;
 }
+.inner-content-block:last-child {
+    margin-left: 95px
+}
+
