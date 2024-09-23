@@ -1,0 +1,123 @@
+html, body { margin: 0; padding: 0; height: 100%; }
+
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+}
+.head {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #fa9000;
+    border-radius: 0 0 30px 30px;
+    box-shadow: rgba(0, 0, 0, 0.37) 0 1px 5px 2px;
+}
+.logo{
+    display: inline-block;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+.logo > img {
+    width: 60px;
+}
+.navigation {
+    user-select: none;
+    margin-left: auto;
+    list-style: none;
+}
+.navigation li {
+    float: left;
+    margin: 0 10px;
+}
+.navigation a {
+    display: block;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ffab37;
+    box-shadow: #ae6d14 2px 2px 1px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.navigation li:last-child a{
+    border-bottom-right-radius: 25px;
+}
+.navigation li:first-child a{
+    border-top-left-radius: 25px;
+}
+.navigation a:hover{
+    background-color: #ffbd59;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+.navigation a:active{
+    background-color: #fabe79;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+div {
+    padding: 20px;
+}
+
+.div-wrapper{
+    margin: 100px 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.div-border {
+    display: block;
+    flex-basis: 300px;
+    padding: 10px;
+}
+
+.border-type-1 {
+    border: 5px solid #fa9000;
+    border-radius: 2.5em;
+}
+.border-type-2 {
+    border: 5px solid #fa9000;
+    border-radius: 7em 0;
+}
+.border-type-3 {
+    border: 5px solid #fa9000;
+    border-radius: 3em 10em;
+}
+.border-type-4 {
+    border: 20px solid;
+    border-color: #fa9000 #ffbd67;
+    border-radius: 10em / 2em;
+}
+.border-type-5 {
+    border: 20px solid;
+    border-color: #fa9000 #ffbd67;
+    border-radius: 60% 15%/ 30% 15%;
+}
+.border-type-6 {
+    border: 20px solid;
+    border-color: #ffbd67 #ffbd67 #ffbd67 #fa9000;
+    border-radius: 0 0 100% 0;
+}
+.border-type-7 {
+    border: double #ffbd67 15px;
+    border-image: url("../img/task2/border.png") 18 18 18 18;
+}
+.border-type-8 {
+    border: double #ffbd67 15px;
+    border-image: url("../img/task2/border.png") 15 / 15px round;
+}
+.border-type-9 {}
+.border-type-10 {}
+.border-type-11 {}
+.border-type-12 {}
