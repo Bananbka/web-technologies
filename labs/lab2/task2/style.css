@@ -1,7 +1,0 @@
-.number:hover {
-    color: transparent;
-}
-.number:hover:before {
-    content: "+380506053205";
-    color: black;
-}
