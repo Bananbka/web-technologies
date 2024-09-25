@@ -120,20 +120,31 @@ header {
     box-shadow: none;
 }
 
+.triangle-cloud {
+    content: '';
+    visibility: hidden;
+    position: absolute;
+    border: 10px #ffb353 solid;
+    transform: rotate(45deg);
+    right: 15px;
+    top: 53px;
+
+}
 .popup-menu {
     display: inline-block;
     visibility: hidden;
     text-align: center;
     transform: translateX(-50%);
     position: absolute;
-    margin-top: 10px;
     width: 300px;
     height: 270px;
     overflow-y: scroll;
     background-color: #ffb353;
     border-radius: 5px;
     box-shadow: #ae6d14 2px 2px 1px;
+    margin-top: 30px;
     padding: 10px;
+    z-index: 0;
 }
 .popup-list {
     margin: 0;
@@ -167,7 +178,9 @@ header {
     vertical-align: top;
 }
 
-.custom-checkbox:checked ~ .popup-menu {
+.custom-checkbox:checked ~ .popup-menu,
+.custom-checkbox:checked ~ .triangle-cloud
+{
     visibility: visible;
 }
 .more-list{
