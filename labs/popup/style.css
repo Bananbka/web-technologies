@@ -1,7 +1,5 @@
 html, body {margin: 0}
-a:focus, li:focus, label:focus{
-    outline: #e4f2db solid 3px;
-}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
@@ -12,6 +10,26 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+a:focus, li:focus, label:focus{
+    outline: #e4f2db solid 3px;
+}
+
+.popup-menu::-webkit-scrollbar-track {
+    background-color: #ffbd59;
+    -webkit-box-shadow: inset 0 0 6px     rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+.popup-menu::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+    background-color: #ffbd59;
+}
+.popup-menu::-webkit-scrollbar-thumb {
+    background-color: #ae6d14;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
 }
 
 .navigation-menu {
@@ -137,8 +155,8 @@ header {
     transform: translateX(-50%);
     position: absolute;
     width: 300px;
-    height: 270px;
-    overflow-y: scroll;
+    max-height: 270px;
+    overflow-y: auto;
     background-color: #ffb353;
     border-radius: 5px;
     box-shadow: #ae6d14 2px 2px 1px;
