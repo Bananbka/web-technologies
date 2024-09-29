@@ -210,7 +210,7 @@ a:focus, li:focus, label:focus{
     border-top: solid 2px #ffd398;
 }
 .more-button {
-    margin: 10px 0;
+    margin: 10px 0 0 0;
 }
 .more-button label {
     border-radius: 1rem;
@@ -225,6 +225,17 @@ a:focus, li:focus, label:focus{
 
 .more-button input[type="checkbox"] {
     display: none;
+}
+.more-button .more-link {
+    display: none;
+}
+.custom-checkbox:checked ~ .more-link {
+    display: inline-block;
+}
+.more-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 .custom-checkbox:checked + label{
     display: none;
