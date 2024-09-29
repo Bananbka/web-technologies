@@ -228,6 +228,7 @@ a:focus, li:focus, label:focus{
 }
 .more-button .more-link {
     display: none;
+    margin-bottom: 0;
 }
 .custom-checkbox:checked ~ .more-link {
     display: inline-block;
