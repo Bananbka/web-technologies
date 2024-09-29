@@ -232,7 +232,7 @@ a:focus, li:focus, label:focus{
 .custom-checkbox:checked ~ .more-link {
     display: inline-block;
 }
-.more-link a {
+.custom-checkbox:checked ~ .more-link a {
     color: white;
     text-decoration: none;
     font-weight: bold;
