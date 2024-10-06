@@ -1,0 +1,164 @@
+html, body { margin: 0; padding: 0; height: 100%;}
+
+header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.head {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #fa9000;
+    border-radius: 0 0 30px 30px;
+    box-shadow: rgba(0, 0, 0, 0.37) 0 1px 5px 2px;
+
+}
+.logo{
+    display: inline-block;
+    padding: 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+.logo > img {
+    width: 60px;
+}
+.navigation {
+    user-select: none;
+    margin-left: auto;
+    list-style: none;
+}
+.navigation li {
+    float: left;
+    margin: 0 10px;
+}
+.navigation a {
+    display: block;
+    padding: 20px 30px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #ffab37;
+    box-shadow: #ae6d14 2px 2px 1px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+.navigation li:last-child a{
+    border-bottom-right-radius: 25px;
+}
+.navigation li:first-child a{
+    border-top-left-radius: 25px;
+}
+.navigation a:hover{
+    background-color: #ffbd59;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+.navigation a:active{
+    background-color: #fabe79;
+    cursor: pointer;
+    transform: translateY(5px);
+}
+
+
+
+
+main {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+label {
+    display:block;
+    color: white;
+}
+input, textarea {
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    text-indent: 20px;
+    border-radius: 10px;
+    opacity: 60%;
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    width: 580px;
+    height: 46px;
+    resize: none;
+    padding: 5px;
+}
+input {
+    display:block;
+    width: 250px;
+    height: 30px;
+}
+form {
+    width: 620px;
+    border: solid 20px #868686;
+    background-image: url("../img/task3/background.png");
+    background-size: cover;
+    padding: 0 20px 20px 20px;
+    display: inline-block;
+}
+label, button {
+    font-size: 18px;
+}
+label:has(textarea) {
+    text-align: center;
+}
+legend {
+    text-align: center;
+    font-size: 25px;
+    color: #7d21b3;
+    font-weight: 700;
+    font-style: italic;
+    margin: 20px;
+    text-decoration: underline red 3px;
+}
+legend:first-letter {
+    font-weight: 1000;
+    font-size: 45px;
+    color: #b352ff;
+}
+
+fieldset {
+    border: red 3px;
+    border-style: solid none none;
+}
+fieldset label:nth-child(odd) {
+    float: right;
+}
+fieldset label:nth-child(even) {
+    float: left;
+}
+
+button {
+    width: 130px;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 50px;
+}
+button:hover {
+    cursor: pointer;
+}
+.submit-button {
+    border: solid 3px #0097a7;
+    color: #0097a7;
+}
+.reset-button {
+    border: solid 3px #e64a19;
+    color: #e64a19;
+}
+.buttons-wrapper {
+    float: right;
+    position:relative;
+    display: block;
+    padding-right: 12px;
+    margin-right: 2px;
+}
+
