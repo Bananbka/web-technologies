@@ -82,7 +82,6 @@ header {
     display: inline-block;
     background-color: lightgray;
     padding: 10px;
-    transition: visibility 0.1s ease;
 }
 
 .block1 {
@@ -91,6 +90,16 @@ header {
     top: 0;
     left: 0;
 }
+.block1::after {
+    content: ' ';
+    visibility: hidden;
+    position: absolute;
+    right: -2rem;
+    top: 0;
+    height: 100%;
+    width: 2rem;
+}
+
 
 .block2 {
     visibility: hidden;
@@ -98,6 +107,14 @@ header {
     height: 100px;
     top: 0;
     right: 0;
+}
+.block2::after {
+    content: ' ';
+    width: 100%;
+    height: 12.5rem;
+    position: absolute;
+    bottom: -12.5rem;
+    left: 0;
 }
 
 .block3 {
@@ -113,8 +130,14 @@ header {
     cursor: pointer;
     visibility: visible;
 }
+.block1:hover::after {
+    visibility: visible;
 
+}
+.block2:hover::after{
+    z-index: 2;
 
+}
 .block2:hover + .block3,
 .block3:hover{
     cursor: pointer;
