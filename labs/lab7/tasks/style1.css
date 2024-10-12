@@ -70,26 +70,30 @@ header {
 
 
 .wrapper {
+    position: relative;
     width: 50%;
-    margin: 20px auto auto ;
+    /*display: inline-block;*/
+    /*margin-top: 110px;*/
+    /*margin: 20px auto auto ;*/
     height: 400px;
-    text-align: center;
+    /*text-align: center;*/
 }
 .block {
     position: absolute;
     border: solid 3px #ffdc7e;
+    height: 40%;
 }
-.inner-wrapper {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 28px;
-}
+/*.inner-wrapper {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    height: 200px;*/
+/*    margin-bottom: 28px;*/
+/*}*/
 
 .inner-block {
-    width: 48%;
-    height: 100%;
+    width: 47%;
     background-color: #f4b200;
+    /*display: inline-block;*/
 }
 
 .inner-block:first-child {
@@ -97,14 +101,18 @@ header {
     left: 0;
 }
 
-.inner-block:last-child {
+.inner-block:nth-child(2) {
     top: 0;
     right: 0;
 }
 .outer-block {
-    width: 50%;
+    width: 100%;
     height: 200px;
     background-color: #f49200;
+    display: block;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 
 .wrapper p {

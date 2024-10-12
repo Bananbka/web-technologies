@@ -239,16 +239,39 @@ fieldset p::after {
 legend {
     position: relative;
     text-align: center;
-    margin: 20px 0;
+    /*right: -30%;*/
+    margin: 20px 0  ;
+    z-index: 5;
+    width: 100%;
+    background-color: black;
 }
+legend:hover {
+    /*visibility: hidden;*/
+    cursor: pointer;
+}
+legend:hover span:nth-child(1) {
+    /*visibility: hidden;*/
+    display: none;
+}
+legend span:nth-child(2) {
+    display: none;
+}
+legend span:nth-child(2):first-letter {
+        font-size: 50px;
+        color: pink;
+}
+legend:hover span:nth-child(2) {
+    display: inline-block;
+}
+
 legend::after {
-    content: 'Заповніть форму';
+    content: '';
 }
 legend:hover::after {
-    content: 'Ми вдячні вам';
+    content: '';
 }
 legend::before {
-    content: ' ';
+    content: '';
     width: 100%;
     height: 3px;
     position: absolute;
@@ -256,10 +279,27 @@ legend::before {
     top: 100%;
     right: 0;
 }
+legend span:nth-child(1)::after {
+    content: ' ';
+    width: 25%;
+    height: 2px;
+    position: absolute;
+    background-color: red;
+    top: 30px;
+    right: 0;
+}
+legend span:nth-child(1)::before {
+    content: ' ';
+    width: 25%;
+    height: 2px;
+    position: absolute;
+    background-color: red;
+    top: 30px;
+    left: 0;
+}
 legend:hover::before {
     background-color: lawngreen;
-    left: -50%;
-    width: 400px;
+    width: 100%;
 }
 legend:hover ~ p::after,
 legend:hover ~ p::before{
