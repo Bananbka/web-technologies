@@ -33,5 +33,8 @@ Labworks Demonstration
   1. [Task1](labs/lab8/task1.html)
   2. [Task2](labs/lab8/task2.html)
 
+**Lab9**
+  1. [Task1](labs/lab9/index.html)
+
 **Popup**
   •  [Link](labs/popup/index.html)
