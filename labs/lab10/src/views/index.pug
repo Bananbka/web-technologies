@@ -1,0 +1,16 @@
+extends layouts/layout.pug
+
+block content
+    include components/logo.pug
+    include components/navigation.pug
+    include components/header.pug
+
+    main
+        .content-wrapper
+            include components/sections/slogan.pug
+            include components/sections/work-examples.pug
+            include components/sections/contact-section.pug
+            include components/sections/offers.pug
+            include components/sections/news.pug
+
+    include components/footer.pug

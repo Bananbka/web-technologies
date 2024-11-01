@@ -1,0 +1,10 @@
+input#burger-check(type="checkbox")
+label.burger-button(for="burger-check")
+    span
+ul.header-buttons-container
+    each button in ['Home', 'About us', 'Our works', 'Journal', 'Contact']
+        li
+            a.button.header-button(href="#")= button
+    li
+        a.like-button(href="#")
+            img(src="task2_content/heart-icon.svg" alt="♥")

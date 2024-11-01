@@ -1,0 +1,11 @@
+.news-box-wrapper
+    h2.box-name From the journal
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat incidunt nobis quas.
+    .news-wrapper
+        each newsItem in [ { date: 'Oct 12, 2024', title: 'Lorem ipsum.', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', img: 'img1.png' },{ date: 'Oct 13, 2024', title: 'Lorem ipsum.', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', img: 'img2.png' }, { date: 'Oct 14, 2024', title: 'Lorem ipsum dolor.', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', img: 'img3.png' }, { date: 'Oct 15, 2024', title: 'Lorem ipsum.', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', img: 'img4.png' }]
+.news
+    img(src=`task2_content/news-images/${newsItem.img}`, alt="" class="news-photo")
+    .news-description-wrapper
+        p.news-date= newsItem.date + " | News"
+        h3.news-header= newsItem.title
+        p.news-description= newsItem.description

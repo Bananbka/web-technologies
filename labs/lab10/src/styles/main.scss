@@ -1,0 +1,46 @@
+$font-stack: 'Ubuntu', sans-serif;
+$primary-bg: #20262c;
+$header-bg: #222831;
+$button-bg: #393E46;
+$highlight-color: #FFD369;
+
+* {
+  font-family: $font-stack;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  margin: auto;
+  background-color: $header-bg;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.41);
+
+  > img {
+    width: 25px;
+    height: 25px;
+    background: rgb(255, 208, 128);
+    border: 5px solid #ffffff;
+    padding: 10px;
+    border-radius: 50%;
+  }
+}
+
+.content-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: $header-bg;
+}

@@ -1,0 +1,10 @@
+.offers-box-wrapper
+    h2.box-name What do we do
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae ea eum facere hic iusto nostrum quisquam quos sint veniam!
+
+    .offers-box
+        each offer in [            { name: 'Web design', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', icon: 'devices.svg' },{ name: 'Motion video', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', icon: 'movie.svg' },{ name: 'Print design', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', icon: 'print.svg' },{ name: 'Illustration', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', icon: 'draw.svg' }]
+.offer
+    img.offer-image(src=`task2_content/offer-images/${offer.icon}`, alt=offer.name)
+    h3.offer-name= offer.name
+    p.offer-description= offer.description
