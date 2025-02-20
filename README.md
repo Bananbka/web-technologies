@@ -1,13 +1,10 @@
 Labworks Demonstration
 
-**Lab1**
-  Coming soon!
+**[Lab1](labs/lab1/index.html)**
 
-**Lab2**
-  Coming soon!
+**[Lab2](labs/lab2/index.html)**
 
-**Lab3**
-  Coming soon!
+**[Lab3](labs/lab3/index.html)**
 
 **Lab4**
   Coming soon!
@@ -25,4 +22,7 @@ Labworks Demonstration
   Coming soon!
 
 **Lab9**
+  Coming soon!
+
+**Lab9.2**
   Coming soon!
