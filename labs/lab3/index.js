@@ -122,14 +122,16 @@ function task5() {
     let text = input.value;
     let result = countVowel(text);
     resultElement.innerText = result;
-    console.log(`Task4: ${result}`);
+    console.log(`Task5: ${result}`);
     return result;
 }
 
 function pow(base, exponent) {
     let result = 1;
     if (exponent < 0) {
-        result = "Error";
+        for (let i = 1; i <= (-1*exponent); i++) {
+            result *= 1/base;
+        }
     } else {
         for (let i = 1; i <= exponent; i++) {
             result *= base;
@@ -147,5 +149,6 @@ function task6() {
     let result = pow(base, exponent);
     resultElement.innerText = result;
 
+    console.log(`Task6: ${result}`);
     return result;
 }
