@@ -40,7 +40,7 @@ function compareObjects(a, b) {
     return true;
 }
 function task1_2() {
-    let obj1 = {"char":'b', "num":6, "smth":"apple"};
+    let obj1 = {"char":'b', "num":6};
     let obj2 = {"num":6, "char":'b'};
     let objects = getElement("objects");
     objects.innerHTML = `<br>${JSON.stringify(obj1)}<br>${JSON.stringify(obj2)}`;
@@ -55,7 +55,7 @@ function isInRange(range, num) {
     return num >= range[0] && num <= range[1];
 }
 function task2_1() {
-    let num = 90;
+    let num = 100;
     let range = [50, 90];
     let rangeElement = getElement('range');
     rangeElement.innerHTML = `<br>${range.join("–")}, num=${num}`;
@@ -85,7 +85,7 @@ function stringifyScore(score) {
     else {return 'Excellent!☺'}
 }
 function task3_1() {
-    let score = 85;
+    let score = 0;
     let scoreElement = getElement("score");
     scoreElement.innerHTML = `<br>Score: ${score}`;
 
@@ -127,13 +127,17 @@ function getSeason(month) {
     return 'Error'
 }
 function task3_2() {
-    let month = "June";
+    let month = "asdasd";
     let montElement = getElement("month");
     montElement.innerHTML = `<br>It is ${month}!`;
-    let result = getSeason("June");
+    let result = getSeason(month);
     let resultElement = getElement("result-3-2");
     resultElement.innerHTML = `<br>${result}`;
 }
+
+1 == '1'
+
+===
 
 task1_1();
 task1_2();
