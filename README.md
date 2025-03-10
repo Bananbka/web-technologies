@@ -6,8 +6,7 @@ Labworks Demonstration
 
 **[Lab3](labs/lab3/index.html)**
 
-**Lab4**
-  Coming soon!
+**[Lab4](labs/lab4/index.html)**
 
 **Lab5**
   Coming soon!
