@@ -8,8 +8,7 @@ Labworks Demonstration
 
 **[Lab4](labs/lab4/index.html)**
 
-**Lab5**
-  Coming soon!
+**[Lab5](labs/lab5/main.html)**
 
 **Lab6**
   Coming soon!
