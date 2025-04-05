@@ -11,7 +11,9 @@ Labworks Demonstration
 **[Lab5](labs/lab5/main.html)**
 
 **Lab6**
-  Coming soon!
+  [Task1](labs/lab6/task1/index.html)
+  [Task2](labs/lab6/task2/index.html)
+
 
 **Lab7**
   Coming soon!
