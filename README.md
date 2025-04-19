@@ -18,7 +18,9 @@ Labworks Demonstration
 **[Lab7](labs/lab7/game.html)**
 
 **Lab8**
-  Coming soon!
+  [Task1](labs/lab8/Task1/main.html)
+  [Task2](labs/lab8/Task2/main.html)
+  [Task3](labs/lab8/Task3/main.html)
 
 **Lab9**
   Coming soon!
