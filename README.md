@@ -22,8 +22,7 @@ Labworks Demonstration
   [Task2](labs/lab8/Task2/main.html)
   [Task3](labs/lab8/Task3/main.html)
 
-**Lab9**
-  Coming soon!
+**[Lab9](labs/lab9/index.html)**
 
 **Lab9.2**
   Coming soon!
