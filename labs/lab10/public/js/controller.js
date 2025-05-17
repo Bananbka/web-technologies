@@ -7,6 +7,10 @@
 }
 
 function redirectToLogin() {
+    const cleanUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, cleanUrl);
+    localStorage.clear();
+
     document.querySelector(".log-out-button").classList.add('hidden');
     const galleryWrapper = document.querySelector('.wrapper');
     if (galleryWrapper) {
