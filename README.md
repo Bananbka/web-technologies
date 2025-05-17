@@ -24,5 +24,4 @@ Labworks Demonstration
 
 **[Lab9](labs/lab9/index.html)**
 
-**Lab9.2**
-  Coming soon!
+**[Lab10](labs/lab10/index.html)**
