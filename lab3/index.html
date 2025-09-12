@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система управління бібліотекою</title>
+
+<!--    <link rel="stylesheet" href="libs/bootstrap.css">-->
+
+</head>
+<body class="bg-body-secondary">
+<header class="my-5">
+    <div class="mx-5 my-3">
+        <h1 class="text-center fw-bold">Система управління бібліотекою</h1>
+        <button id="clear-btn" class="btn btn-sm bg-danger text-white position-absolute">Clear storage</button>
+    </div>
+</header>
+<main>
+    <div class="d-flex flex-column gap-5 mx-5 my-1">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="fw-medium py-3 m-0">Додати книгу:</h2>
+            </div>
+            <form id="add-book-form" class="px-3 py-3 flex-column input-group-lg">
+                <input id="book-name" class="form-control mb-3" type="text" name="name" placeholder="Назва">
+                <div class="invalid-feedback  mb-3"></div>
+                <input id="book-author" class="form-control mb-3" type="text" name="author" placeholder="Автор">
+                <div class="invalid-feedback  mb-3"></div>
+                <input id="book-year" class="form-control mb-3" type="text" name="publishYear" placeholder="Рік">
+                <div class="invalid-feedback mb-3"></div>
+                <button type="submit" class="btn btn-primary">Додати</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="fw-medium py-3 m-0">Додати користувача:</h2>
+            </div>
+            <form id="add-user-form" class="p-3 flex-column input-group-lg">
+                <input id="user-name" class="form-control mb-3" type="text" name="name" placeholder="Ім'я">
+                <div class="invalid-feedback mb-3"></div>
+                <input id="user-email" class="form-control mb-3" type="email" name="email" placeholder="Email">
+                <div class="invalid-feedback mb-3"></div>
+                <button type="submit" class="btn btn-primary">Додати</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="fw-medium py-3 m-0">Список книг:</h2>
+            </div>
+            <div class="mb-3 px-3">
+                <input id="search-books" type="text" class="form-control" placeholder="Пошук за назвою або автором">
+            </div>
+            <ul id="books-list" class="list-group p-3">
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="fw-medium py-3 m-0">Список користувачів:</h2>
+            </div>
+            <ul id="users-list" class="list-group p-3">
+            </ul>
+        </div>
+    </div>
+    <footer class="mt-5 bg-dark p-3">
+        <p class="blockquote-footer mt-2">
+            Done by Nikita Zaloha 343-2
+        </p>
+
+    </footer>
+</main>
+
+<div class="modal fade" id="borrowModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Бронювання книги</h5>
+                <button type="button" class="btn-close closeBorrowModal" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+            <div class="modal-body">
+                <label for="userId" class="form-label">ID користувача</label>
+                <input id="userId" class="form-control" type="number" min="1" value="1" placeholder="Введіть ID користувача">
+                <div class="invalid-feedback">Користувач з таким ID не знайдений</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="confirmBorrow">Підтвердити</button>
+                <button type="button" class="btn btn-secondary closeBorrowModal" data-bs-dismiss="modal">Закрити</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bundle.js" type="module"></script>
+<!--<script type="module" src="dist/app.js"></script>-->
+</body>
+</html>
