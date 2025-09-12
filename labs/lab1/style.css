@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    font-family: Inter, Geneva, Tahoma, sans-serif;
+    color: var(--text-50);
+}
+
+body {
+    background-color: var(--background-950);
+}
+
+.block-wrapper {
+    margin: 0 15%;
+}
+
+.navbar {
+    border-bottom: solid  1px var(--text-50);
+    padding: 10px 1px;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lab-number {
+    font-weight: bold;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo{
+    width: 2vw;
+}
+
+.variant-text {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.content-block {
+    margin-top: 100px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: var(--background-900);
+}
+.bee-title {
+    border-radius: 5px;
+    padding: 2px 5px;
+    display: inline-block;
+    background-color: var(--background-800);
+    margin-bottom: 5px;
+}
+
+:root {
+    --text-50: #e7f4fd;
+    --text-100: #d0e9fb;
+    --text-200: #a1d3f7;
+    --text-300: #71bdf4;
+    --text-400: #42a7f0;
+    --text-500: #1392ec;
+    --text-600: #0f74bd;
+    --text-700: #0b578e;
+    --text-800: #083a5e;
+    --text-900: #041d2f;
+    --text-950: #020f18;
+
+    --background-50: #e8f4fc;
+    --background-100: #d1eafa;
+    --background-200: #a4d4f4;
+    --background-300: #76bfef;
+    --background-400: #48a9ea;
+    --background-500: #1b94e4;
+    --background-600: #1576b7;
+    --background-700: #105989;
+    --background-800: #0b3b5b;
+    --background-900: #051e2e;
+    --background-950: #030f17;
+
+    --primary-50: #e9f4fc;
+    --primary-100: #d3e9f8;
+    --primary-200: #a7d3f1;
+    --primary-300: #7bbeea;
+    --primary-400: #4fa8e3;
+    --primary-500: #2292dd;
+    --primary-600: #1c75b0;
+    --primary-700: #155884;
+    --primary-800: #0e3a58;
+    --primary-900: #071d2c;
+    --primary-950: #030f16;
+
+    --secondary-50: #eaeafa;
+    --secondary-100: #d5d5f6;
+    --secondary-200: #ababed;
+    --secondary-300: #8282e3;
+    --secondary-400: #5858da;
+    --secondary-500: #2e2ed1;
+    --secondary-600: #2525a7;
+    --secondary-700: #1c1c7d;
+    --secondary-800: #121254;
+    --secondary-900: #09092a;
+    --secondary-950: #050515;
+
+    --accent-50: #fefbe7;
+    --accent-100: #fdf7ce;
+    --accent-200: #faee9e;
+    --accent-300: #f8e66d;
+    --accent-400: #f6dd3c;
+    --accent-500: #f4d50b;
+    --accent-600: #c3aa09;
+    --accent-700: #928007;
+    --accent-800: #615505;
+    --accent-900: #312b02;
+    --accent-950: #181501;
+
+}

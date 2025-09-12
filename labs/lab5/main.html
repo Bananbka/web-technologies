@@ -1,0 +1,139 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="public/honeybee_iphone.png">
+    <title>lab5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+<nav class="navbar">
+    <div class="block-wrapper navbar-content">
+        <div class="logo-container">
+            <img class="logo" src="public/honeybee_iphone.png" alt="🐝">
+            <span class="variant-text">variant 7</span>
+        </div>
+        <h1 class="lab-number">
+            lab 5
+        </h1>
+    </div>
+</nav>
+<main class="main-content">
+    <div>
+        <div class="content-block">
+            <div id="lamp-picture" class="lamp1-off"></div>
+            <div class="manage-lamp">
+                <div>
+                    Power:
+                    <label class="switch">
+                        <input id="lamp-power" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="radio-lamp">
+                    <label>
+                        Regular
+                        <input id="regular-lamp" name="lamp-type" type="radio" checked>
+                    </label>
+                    <label>
+                        Cool
+                        <input id="cool-lamp" name="lamp-type" type="radio"/>
+                    </label>
+                    <label>
+                        OMG
+                        <input id="omg-lamp" name="lamp-type" type="radio"/>
+                    </label>
+                </div>
+                <span id="lamp-hint" class="hint"></span>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="traffic-light">
+                <div class="light red" id="red"></div>
+                <div class="light yellow" id="yellow"></div>
+                <div class="light green" id="green"></div>
+            </div>
+            <div>
+                <div class="traffic-light-buttons">
+                    <button class="result-button" id="nextBtn">Наступний</button>
+                    <button class="result-button" id="startBtn">Старт</button>
+                    <button class="result-button" id="setTimesBtn">Задати тривалість</button>
+                </div>
+                <div class="hint" id="status">Очікування старту...</div>
+            </div>
+        </div>
+        <div class="content-block">
+            <div>
+                <div>
+                    <h2>Цифровий годинник</h2>
+                    <div id="clock" class="clock"></div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 10px; margin: 10px 0;">
+                    <h2>Таймер зворотного відліку</h2>
+                    <input type="datetime-local" id="timerInput" />
+                    <button id="startTimerBtn" class="result-button">Запустити таймер</button>
+                    <div id="countdown"></div>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px; margin: 10px 0;">
+                    <h2>Ваш день народження</h2>
+                    <input type="date" id="birthdayInput" />
+                    <button id="countdownBirthdayBtn" class="result-button">Порахувати залишок</button>
+                    <div id="birthdayCountdown"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content-block">
+            <div class="shop-block">
+                <h1>Інтернет-магазин</h1>
+
+                <div class="block">
+                    <h2>Додавання продукту</h2>
+                    <input type="text" id="productName" placeholder="Назва продукту">
+                    <input type="number" id="productPrice" placeholder="Ціна">
+                    <input type="number" id="productStock" placeholder="Кількість на складі">
+                    <button class="result-button" onclick="addProduct()">Додати продукт</button>
+                </div>
+
+                <div class="block">
+                    <h2>Пошук продукту</h2>
+                    <input type="text" id="searchName" placeholder="Шукати за назвою">
+                    <button class="result-button" onclick="searchProduct()">Шукати</button>
+                </div>
+
+                <div class="block">
+                    <h2>Оновлення продукту</h2>
+                    <input type="text" id="updateName" placeholder="Назва продукту для оновлення">
+                    <input type="number" id="updatePrice" placeholder="Нова ціна">
+                    <input type="number" id="updateStock" placeholder="Нова кількість">
+                    <button class="result-button" onclick="updateProduct()">Оновити продукт</button>
+                </div>
+
+                <div class="block">
+                    <h2>Видалення продукту</h2>
+                    <input type="text" id="deleteName" placeholder="Назва продукту для видалення">
+                    <button class="result-button" onclick="deleteProduct()">Видалити продукт</button>
+                </div>
+
+                <div class="block">
+                    <h2>Замовлення</h2>
+                    <input type="text" id="orderName" placeholder="Назва продукту для замовлення">
+                    <input type="number" id="orderQuantity" placeholder="Кількість для замовлення">
+                    <button class="result-button" onclick="makeOrder()">Оформити замовлення</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</main>
+</body>
+</html>

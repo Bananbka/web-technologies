@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="public/honeybee_iphone.png">
+    <title>lab3</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="block-wrapper navbar-content">
+            <div class="logo-container">
+                <img class="logo" src="public/honeybee_iphone.png" alt="🐝">
+                <span class="variant-text">variant 7</span>
+            </div>
+            <h1 class="lab-number">
+                lab 3
+            </h1>
+        </div>
+    </nav>
+    <main class="main-content">
+        <div class="block-wrapper">
+            <div class="content-block">
+                <div class="task-blocks-wrapper">
+                    <div class="task">
+                        <h2 class="task-header">
+                            Sum 50
+                        </h2>
+                        <div class="task-content">
+                            <p class="result" id="sum"></p>
+                            <button class="result-button" onclick="task1()">
+                                Get sum
+                            </button>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <h2 class="task-header">
+                            Factorial
+                        </h2>
+                        <div class="task-content">
+                            <p class="result" id="factorial"></p>
+                            <label>
+                                Input number:
+                                <input type="number" id="factorial-input">
+                            </label>
+                            <button class="result-button" onclick="task2()">
+                                Find
+                            </button>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <h2 class="task-header">
+                            Get month
+                        </h2>
+                        <div class="task-content">
+                            <p class="result" id="month"></p>
+                            <label>
+                                Input number:
+                                <input type="number" id="month-input">
+                            </label>
+                            <button class="result-button" onclick="task3()">
+                                Find
+                            </button>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <h2 class="task-header">
+                            Sum even numbers
+                        </h2>
+                        <div class="task-content">
+                            <p class="condition" id="even-array"></p>
+                            <p class="result" id="even"></p>
+                            <button class="result-button" onclick="task4()">
+                                Calculate
+                            </button>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <h2 class="task-header">
+                            Vowel
+                        </h2>
+                        <div class="task-content">
+                            <p class="result" id="vowel"></p>
+                            <label>
+                                Input text:
+                                <input type="text" id="vowel-input">
+                            </label>
+                            <button class="result-button" onclick="task5()">
+                                Count
+                            </button>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <h2 class="task-header">
+                            Power-up number
+                        </h2>
+                        <div class="task-content">
+                            <p class="result" id="pow"></p>
+                            <label>
+                                Input base:
+                                <input type="number" id="base-input">
+                            </label>
+                            <label>
+                                Input exponent:
+                                <input type="number" id="exponent-input">
+                            </label>
+                            <button class="result-button" onclick="task6()">
+                                Calculate
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
