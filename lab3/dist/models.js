@@ -99,7 +99,9 @@ export class User {
     }
     returnBook(book) {
         book.returnBook();
-        this._borrowedBooks = this._borrowedBooks.filter((_book) => _book.id !== book.id);
+        this._borrowedBooks = this._borrowedBooks.filter(
+            (_book) => _book.id !== book.id
+        );
     }
     toString() {
         return `${this._name} (${this._email})\n${this._borrowedBooks}`;

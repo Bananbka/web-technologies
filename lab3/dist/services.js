@@ -4,13 +4,15 @@ export class LibraryService {
         LibraryService.books.addItem(book);
     }
     static removeBook(book) {
-        LibraryService.users.items.forEach(user => {
-            user.borrowedBooks = user.borrowedBooks.filter(b => b.id !== book.id);
+        LibraryService.users.items.forEach((user) => {
+            user.borrowedBooks = user.borrowedBooks.filter(
+                (b) => b.id !== book.id
+            );
         });
         LibraryService.books.removeItem(book);
     }
     static removeUser(user) {
-        user.borrowedBooks.forEach(book => {
+        user.borrowedBooks.forEach((book) => {
             book.borrowed = false;
         });
         LibraryService.users.removeItem(user);
@@ -33,7 +35,7 @@ export class LibraryService {
                 return;
             }
         }
-        throw new Error("Книжку ніхто не брав...");
+        throw new Error('Книжку ніхто не брав...');
     }
 }
 LibraryService.books = new Library();

@@ -1,42 +1,54 @@
 // import all modules here
-import {Book, User} from './models';
-import {LibraryService} from './services';
-import {Storage} from './storage';
-import {Validation} from "./validation";
-import {Modal} from "./modal";
-import {Snackbar} from "./toast";
-import "../libs/bootstrap.css";
+import { Book, User } from './models';
+import { LibraryService } from './services';
+import { Storage } from './storage';
+import { Validation } from './validation';
+import { Modal } from './modal';
+import { Snackbar } from './toast';
+import '../libs/bootstrap.css';
 
 // etc.
 
 class App {
     private snackbar: Snackbar = new Snackbar();
-    private booksListEl = document.getElementById('books-list') as HTMLUListElement;
-    private usersListEl = document.getElementById('users-list') as HTMLUListElement;
+    private booksListEl = document.getElementById(
+        'books-list'
+    ) as HTMLUListElement;
+    private usersListEl = document.getElementById(
+        'users-list'
+    ) as HTMLUListElement;
     private selectedBook: Book | null = null;
     private borrowModal: Modal;
-    private searchInput = document.getElementById('search-books') as HTMLInputElement;
+    private searchInput = document.getElementById(
+        'search-books'
+    ) as HTMLInputElement;
     private booksPerPage = 5;
     private currentPage = 1;
 
     constructor() {
-        this.borrowModal = new Modal('borrowModal', 'confirmBorrow', 'closeBorrowModal');
+        this.borrowModal = new Modal(
+            'borrowModal',
+            'confirmBorrow',
+            'closeBorrowModal'
+        );
         this.init();
     }
 
     init() {
         Storage.loadBooksData();
         Storage.loadUsersData();
-        console.log(LibraryService.books.items)
-        console.log(LibraryService.users.items)
+        console.log(LibraryService.books.items);
+        console.log(LibraryService.users.items);
         this.renderBooks();
         this.renderUsers();
         this.setupEventListeners();
     }
 
     setupEventListeners() {
-        const addBookForm = document.getElementById("add-book-form") as HTMLFormElement;
-        addBookForm?.addEventListener("submit", (e) => {
+        const addBookForm = document.getElementById(
+            'add-book-form'
+        ) as HTMLFormElement;
+        addBookForm?.addEventListener('submit', (e) => {
             e.preventDefault();
             if (!Validation.validateBookForm(addBookForm)) return;
 
@@ -46,15 +58,17 @@ class App {
             const book = new Book({
                 name: formObj.name as string,
                 author: formObj.author as string,
-                publishYear: Number(formObj.publishYear)
+                publishYear: Number(formObj.publishYear),
             });
-            LibraryService.addBook(book)
-            Storage.setBooksData()
+            LibraryService.addBook(book);
+            Storage.setBooksData();
             this.renderBooks();
         });
 
-        const addUserForm = document.getElementById("add-user-form") as HTMLFormElement;
-        addUserForm?.addEventListener("submit", (e) => {
+        const addUserForm = document.getElementById(
+            'add-user-form'
+        ) as HTMLFormElement;
+        addUserForm?.addEventListener('submit', (e) => {
             e.preventDefault();
             if (!Validation.validateUserForm(addUserForm)) return;
 
@@ -62,16 +76,18 @@ class App {
             const formObj: any = Object.fromEntries(formData.entries());
 
             const user: User = new User(formObj);
-            LibraryService.addUser(user)
-            Storage.setUsersData()
+            LibraryService.addUser(user);
+            Storage.setUsersData();
             this.renderUsers();
         });
 
-        const clearBtn = document.getElementById("clear-btn") as HTMLButtonElement;
-        clearBtn?.addEventListener("click", () => {
+        const clearBtn = document.getElementById(
+            'clear-btn'
+        ) as HTMLButtonElement;
+        clearBtn?.addEventListener('click', () => {
             Storage.clearStorage();
-            this.snackbar.show("Сховище очищено.")
-        })
+            this.snackbar.show('Сховище очищено.');
+        });
 
         this.searchInput?.addEventListener('input', () => {
             this.currentPage = 1;
@@ -84,9 +100,10 @@ class App {
 
         const searchValue = this.searchInput?.value.toLowerCase() || '';
         if (searchValue) {
-            books = books.filter(book =>
-                book.name.toLowerCase().includes(searchValue) ||
-                book.author.toLowerCase().includes(searchValue)
+            books = books.filter(
+                (book) =>
+                    book.name.toLowerCase().includes(searchValue) ||
+                    book.author.toLowerCase().includes(searchValue)
             );
         }
 
@@ -96,9 +113,10 @@ class App {
 
         this.booksListEl.innerHTML = '';
 
-        paginatedBooks.forEach(book => {
+        paginatedBooks.forEach((book) => {
             const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center fs-5';
+            li.className =
+                'list-group-item d-flex justify-content-between align-items-center fs-5';
             li.dataset.bookId = String(book.id);
 
             const textSpan = document.createElement('span');
@@ -126,14 +144,14 @@ class App {
                 li.addEventListener('click', () => this.showBorrowModal(book));
             } else {
                 li.addEventListener('click', () => {
-                    try{
+                    try {
                         LibraryService.returnBook(book);
-                        this.snackbar.show("Книжку повернуто");
+                        this.snackbar.show('Книжку повернуто');
                         this.renderBooks();
                         Storage.setBooksData();
                         Storage.setUsersData();
-                    } catch (e:any) {
-                        this.snackbar.show(e.message, "danger");
+                    } catch (e: any) {
+                        this.snackbar.show(e.message, 'danger');
                     }
                 });
             }
@@ -146,12 +164,15 @@ class App {
 
     renderPagination(totalBooks: number) {
         const paginationContainerId = 'books-pagination';
-        let paginationContainer = document.getElementById(paginationContainerId);
+        let paginationContainer = document.getElementById(
+            paginationContainerId
+        );
 
         if (!paginationContainer) {
             paginationContainer = document.createElement('div');
             paginationContainer.id = paginationContainerId;
-            paginationContainer.className = 'd-flex justify-content-center mt-3';
+            paginationContainer.className =
+                'd-flex justify-content-center mt-3';
             this.booksListEl.parentElement?.appendChild(paginationContainer);
         }
 
@@ -174,9 +195,10 @@ class App {
         const users = LibraryService.users.items;
         this.usersListEl.innerHTML = '';
 
-        users.forEach(user => {
+        users.forEach((user) => {
             const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center fs-5';
+            li.className =
+                'list-group-item d-flex justify-content-between align-items-center fs-5';
             li.dataset.userId = String(user.id);
 
             // текст користувача
@@ -200,7 +222,6 @@ class App {
         });
     }
 
-
     showBorrowModal(book: Book) {
         this.selectedBook = book;
 
@@ -210,9 +231,11 @@ class App {
     }
 
     borrowBook() {
-        const userIdInput = document.getElementById('userId') as HTMLInputElement;
+        const userIdInput = document.getElementById(
+            'userId'
+        ) as HTMLInputElement;
         const userId = Number(userIdInput.value);
-        const user = LibraryService.users.items.find(u => u.id === userId);
+        const user = LibraryService.users.items.find((u) => u.id === userId);
 
         if (!user || !this.selectedBook) {
             userIdInput.classList.add('is-invalid');
@@ -220,7 +243,7 @@ class App {
         }
 
         try {
-            LibraryService.borrowBook(user, this.selectedBook)
+            LibraryService.borrowBook(user, this.selectedBook);
             Storage.setBooksData();
             Storage.setUsersData();
 
@@ -229,10 +252,10 @@ class App {
 
             this.renderBooks();
             this.renderUsers();
-            this.snackbar.show("Книгу видано!")
+            this.snackbar.show('Книгу видано!');
             this.borrowModal.hide();
         } catch (err: any) {
-            this.snackbar.show(err.message, "danger")
+            this.snackbar.show(err.message, 'danger');
         }
     }
 }

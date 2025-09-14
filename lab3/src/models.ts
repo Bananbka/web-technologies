@@ -20,14 +20,19 @@ export class Book implements IBook {
     private _publishYear: number;
     private _borrowed: boolean;
 
-    constructor(data: { id?: number; name: string; author: string; publishYear: number; borrowed?: boolean }) {
+    constructor(data: {
+        id?: number;
+        name: string;
+        author: string;
+        publishYear: number;
+        borrowed?: boolean;
+    }) {
         this._id = data.id ?? Book.__lastId++;
         this._name = data.name;
         this._author = data.author;
         this._publishYear = data.publishYear;
         this._borrowed = data.borrowed ?? false;
     }
-
 
     get id(): number {
         return this._id;
@@ -113,13 +118,17 @@ export class User implements IUser {
     private _email: string;
     private _borrowedBooks: Book[];
 
-    constructor(data: { id?: number; name: string; email: string; borrowedBooks?: Book[] }) {
+    constructor(data: {
+        id?: number;
+        name: string;
+        email: string;
+        borrowedBooks?: Book[];
+    }) {
         this._id = data.id ?? User.__lastId++;
         this._name = data.name;
         this._email = data.email;
         this._borrowedBooks = data.borrowedBooks ?? [];
     }
-
 
     get id(): number {
         return this._id;

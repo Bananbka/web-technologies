@@ -1,19 +1,22 @@
 export class Modal {
     constructor(modalId, confirmBtnId, closeClassBtn) {
         const el = document.getElementById(modalId);
-        if (!el)
-            throw new Error(`Modal with id "${modalId}" not found`);
+        if (!el) throw new Error(`Modal with id "${modalId}" not found`);
         this.modalEl = el;
         if (confirmBtnId) {
             const btn = document.getElementById(confirmBtnId);
             if (!btn)
-                throw new Error(`Confirm button with id "${confirmBtnId}" not found`);
+                throw new Error(
+                    `Confirm button with id "${confirmBtnId}" not found`
+                );
             this.confirmBtn = btn;
         }
         if (closeClassBtn) {
-            const btns = Array.from(document.querySelectorAll(`.${closeClassBtn}`)) || [];
+            const btns =
+                Array.from(document.querySelectorAll(`.${closeClassBtn}`)) ||
+                [];
             btns.forEach((el) => {
-                el.addEventListener('click', e => {
+                el.addEventListener('click', (e) => {
                     this.hide();
                 });
             });

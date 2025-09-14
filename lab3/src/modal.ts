@@ -3,24 +3,34 @@ export class Modal {
     private readonly confirmBtn?: HTMLElement;
     private onConfirmCallback?: () => void;
 
-    constructor(modalId: string, confirmBtnId?: string, closeClassBtn?: string) {
+    constructor(
+        modalId: string,
+        confirmBtnId?: string,
+        closeClassBtn?: string
+    ) {
         const el = document.getElementById(modalId);
         if (!el) throw new Error(`Modal with id "${modalId}" not found`);
         this.modalEl = el;
 
         if (confirmBtnId) {
             const btn = document.getElementById(confirmBtnId);
-            if (!btn) throw new Error(`Confirm button with id "${confirmBtnId}" not found`);
+            if (!btn)
+                throw new Error(
+                    `Confirm button with id "${confirmBtnId}" not found`
+                );
             this.confirmBtn = btn;
         }
 
         if (closeClassBtn) {
-            const btns: HTMLElement[] = Array.from(document.querySelectorAll(`.${closeClassBtn}`)) as HTMLElement[] || [];
+            const btns: HTMLElement[] =
+                (Array.from(
+                    document.querySelectorAll(`.${closeClassBtn}`)
+                ) as HTMLElement[]) || [];
             btns.forEach((el: HTMLElement) => {
                 el.addEventListener('click', () => {
                     this.hide();
-                })
-            })
+                });
+            });
         }
 
         this.modalEl.addEventListener('click', (e) => {
