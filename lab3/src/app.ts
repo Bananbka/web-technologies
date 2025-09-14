@@ -112,7 +112,7 @@ class App {
         const paginatedBooks = books.slice(start, end);
 
         this.booksListEl.innerHTML = '';
-
+        let a=1
         paginatedBooks.forEach((book) => {
             const li = document.createElement('li');
             li.className =
