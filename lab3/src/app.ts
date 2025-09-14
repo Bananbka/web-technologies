@@ -111,7 +111,7 @@ class App {
         const end = start + this.booksPerPage;
         const paginatedBooks = books.slice(start, end);
 
-        this.booksListEl.innerHTML = ";
+        this.booksListEl.innerHTML = ;
 
         paginatedBooks.forEach((book) => {
             const li = document.createElement('li');
