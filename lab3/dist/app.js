@@ -1,10 +1,10 @@
 import { Book, User } from './models';
 import { LibraryService } from './services';
 import { Storage } from './storage';
-import { Validation } from "./validation";
-import { Modal } from "./modal";
-import { Snackbar } from "./toast";
-import "../libs/bootstrap.css";
+import { Validation } from './validation';
+import { Modal } from './modal';
+import { Snackbar } from './toast';
+import '../libs/bootstrap.css';
 class App {
     constructor() {
         this.snackbar = new Snackbar();
@@ -27,8 +27,8 @@ class App {
         this.setupEventListeners();
     }
     setupEventListeners() {
-        const addBookForm = document.getElementById("add-book-form");
-        addBookForm?.addEventListener("submit", (e) => {
+        const addBookForm = document.getElementById('add-book-form');
+        addBookForm?.addEventListener('submit', (e) => {
             e.preventDefault();
             if (!Validation.validateBookForm(addBookForm))
                 return;
@@ -37,14 +37,14 @@ class App {
             const book = new Book({
                 name: formObj.name,
                 author: formObj.author,
-                publishYear: Number(formObj.publishYear)
+                publishYear: Number(formObj.publishYear),
             });
             LibraryService.addBook(book);
             Storage.setBooksData();
             this.renderBooks();
         });
-        const addUserForm = document.getElementById("add-user-form");
-        addUserForm?.addEventListener("submit", (e) => {
+        const addUserForm = document.getElementById('add-user-form');
+        addUserForm?.addEventListener('submit', (e) => {
             e.preventDefault();
             if (!Validation.validateUserForm(addUserForm))
                 return;
@@ -55,10 +55,10 @@ class App {
             Storage.setUsersData();
             this.renderUsers();
         });
-        const clearBtn = document.getElementById("clear-btn");
-        clearBtn?.addEventListener("click", (e) => {
+        const clearBtn = document.getElementById('clear-btn');
+        clearBtn?.addEventListener('click', () => {
             Storage.clearStorage();
-            this.snackbar.show("Сховище очищено.");
+            this.snackbar.show('Сховище очищено.');
         });
         this.searchInput?.addEventListener('input', () => {
             this.currentPage = 1;
@@ -69,16 +69,17 @@ class App {
         let books = LibraryService.books.items;
         const searchValue = this.searchInput?.value.toLowerCase() || '';
         if (searchValue) {
-            books = books.filter(book => book.name.toLowerCase().includes(searchValue) ||
+            books = books.filter((book) => book.name.toLowerCase().includes(searchValue) ||
                 book.author.toLowerCase().includes(searchValue));
         }
         const start = (this.currentPage - 1) * this.booksPerPage;
         const end = start + this.booksPerPage;
         const paginatedBooks = books.slice(start, end);
         this.booksListEl.innerHTML = '';
-        paginatedBooks.forEach(book => {
+        paginatedBooks.forEach((book) => {
             const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center fs-5';
+            li.className =
+                'list-group-item d-flex justify-content-between align-items-center fs-5';
             li.dataset.bookId = String(book.id);
             const textSpan = document.createElement('span');
             textSpan.textContent = `${book.name} (${book.publishYear}) - ${book.author}`;
@@ -105,13 +106,13 @@ class App {
                 li.addEventListener('click', () => {
                     try {
                         LibraryService.returnBook(book);
-                        this.snackbar.show("Книжку повернуто");
+                        this.snackbar.show('Книжку повернуто');
                         this.renderBooks();
                         Storage.setBooksData();
                         Storage.setUsersData();
                     }
                     catch (e) {
-                        this.snackbar.show(e.message, "danger");
+                        this.snackbar.show(e.message, 'danger');
                     }
                 });
             }
@@ -125,7 +126,8 @@ class App {
         if (!paginationContainer) {
             paginationContainer = document.createElement('div');
             paginationContainer.id = paginationContainerId;
-            paginationContainer.className = 'd-flex justify-content-center mt-3';
+            paginationContainer.className =
+                'd-flex justify-content-center mt-3';
             this.booksListEl.parentElement?.appendChild(paginationContainer);
         }
         paginationContainer.innerHTML = '';
@@ -144,9 +146,10 @@ class App {
     renderUsers() {
         const users = LibraryService.users.items;
         this.usersListEl.innerHTML = '';
-        users.forEach(user => {
+        users.forEach((user) => {
             const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center fs-5';
+            li.className =
+                'list-group-item d-flex justify-content-between align-items-center fs-5';
             li.dataset.userId = String(user.id);
             const textSpan = document.createElement('span');
             textSpan.textContent = `${user.id}: ${user.name} (${user.email})`;
@@ -173,7 +176,7 @@ class App {
     borrowBook() {
         const userIdInput = document.getElementById('userId');
         const userId = Number(userIdInput.value);
-        const user = LibraryService.users.items.find(u => u.id === userId);
+        const user = LibraryService.users.items.find((u) => u.id === userId);
         if (!user || !this.selectedBook) {
             userIdInput.classList.add('is-invalid');
             return;
@@ -186,11 +189,11 @@ class App {
             userIdInput.classList.remove('is-invalid');
             this.renderBooks();
             this.renderUsers();
-            this.snackbar.show("Книгу видано!");
+            this.snackbar.show('Книгу видано!');
             this.borrowModal.hide();
         }
         catch (err) {
-            this.snackbar.show(err.message, "danger");
+            this.snackbar.show(err.message, 'danger');
         }
     }
 }

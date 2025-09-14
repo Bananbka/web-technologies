@@ -5,7 +5,6 @@ export class Library<T extends { id: number }> {
         this._items = [];
     }
 
-
     get items(): T[] {
         return this._items;
     }
@@ -16,7 +15,7 @@ export class Library<T extends { id: number }> {
 
     addItem(item: T): void {
         if (this.isItemExist(item)) {
-            throw new Error("Повторний айді: " + item.id);
+            throw new Error('Повторний айді: ' + item.id);
         }
         this._items.push(item);
     }
@@ -36,4 +35,3 @@ export class Library<T extends { id: number }> {
         return this._items.some((_item: T) => _item.id === item.id);
     }
 }
-

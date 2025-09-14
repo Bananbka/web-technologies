@@ -2,9 +2,11 @@ export class Validation {
     static validateBookForm(form: HTMLFormElement): boolean {
         let isValid = true;
 
-        const inputs = Array.from(form.querySelectorAll('input')) as HTMLInputElement[];
+        const inputs = Array.from(
+            form.querySelectorAll('input')
+        ) as HTMLInputElement[];
 
-        inputs.forEach(input => {
+        inputs.forEach((input) => {
             const feedback = input.nextElementSibling as HTMLElement;
             const value = input.value.trim();
 
@@ -38,9 +40,11 @@ export class Validation {
     static validateUserForm(form: HTMLFormElement): boolean {
         let isValid = true;
 
-        const inputs = Array.from(form.querySelectorAll('input')) as HTMLInputElement[];
+        const inputs = Array.from(
+            form.querySelectorAll('input')
+        ) as HTMLInputElement[];
 
-        inputs.forEach(input => {
+        inputs.forEach((input) => {
             const feedback = input.nextElementSibling as HTMLElement;
             const value = input.value.trim();
 

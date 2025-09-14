@@ -13,7 +13,7 @@ export class Modal {
         if (closeClassBtn) {
             const btns = Array.from(document.querySelectorAll(`.${closeClassBtn}`)) || [];
             btns.forEach((el) => {
-                el.addEventListener('click', e => {
+                el.addEventListener('click', () => {
                     this.hide();
                 });
             });

@@ -10,7 +10,7 @@ export class Library {
     }
     addItem(item) {
         if (this.isItemExist(item)) {
-            throw new Error("Повторний айді: " + item.id);
+            throw new Error('Повторний айді: ' + item.id);
         }
         this._items.push(item);
     }

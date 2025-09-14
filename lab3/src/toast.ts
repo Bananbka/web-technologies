@@ -13,7 +13,11 @@
         }
     }
 
-    show(message: string, type: 'success' | 'danger' = 'success', duration: number = 3000) {
+    show(
+        message: string,
+        type: 'success' | 'danger' = 'success',
+        duration: number = 3000
+    ) {
         const toast = document.createElement('div');
         toast.className = `text-white fs-3 p-3 rounded ${type === 'success' ? 'bg-success' : 'bg-danger'}`;
         toast.textContent = message;
