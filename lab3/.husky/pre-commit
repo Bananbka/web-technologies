@@ -1,2 +1,7 @@
-npm test
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "Husky is running"
+
+# Навмисна помилка для тесту
 exit 1
