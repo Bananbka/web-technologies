@@ -8,7 +8,7 @@
     "start": "webpack serve --open",
     "format": "prettier --write .",
     "lint": "eslint",
-    "test": "mocha",
+    "test": "mocha -r ts-node/register test/*.test.js",
     "prepare": "husky"
   },
   "repository": {
@@ -32,6 +32,7 @@
     "prettier": "^3.6.2",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
     "undici-types": "^7.16.0",
     "webpack": "^5.94.0",
@@ -39,6 +40,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "jsdom": "^27.0.0",
     "typescript-eslint": "^8.43.0"
   }
 }

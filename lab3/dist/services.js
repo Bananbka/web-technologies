@@ -5,9 +5,7 @@ export class LibraryService {
     }
     static removeBook(book) {
         LibraryService.users.items.forEach((user) => {
-            user.borrowedBooks = user.borrowedBooks.filter(
-                (b) => b.id !== book.id
-            );
+            user.borrowedBooks = user.borrowedBooks.filter((b) => b.id !== book.id);
         });
         LibraryService.books.removeItem(book);
     }
