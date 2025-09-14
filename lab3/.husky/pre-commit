@@ -1,2 +1,2 @@
 npm test
-exit 1
+node .husky/pre-commit.js
