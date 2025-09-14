@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack serve --open",
     "format": "prettier --write .",
-    "lint": "eslint \"src/*.{ts,js}\"",
+    "lint": "eslint",
     "test": "exit 1",
     "prepare": "husky"
   },
