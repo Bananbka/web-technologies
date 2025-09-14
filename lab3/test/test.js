@@ -2,6 +2,6 @@
 
 describe('Failing test example', () => {
     it('this test should fail', () => {
-        expect(2 + 2).to.equal(5); // Це провалиться
+        expect(2 + 2).to.equal(4); // Це провалиться
     });
 });
