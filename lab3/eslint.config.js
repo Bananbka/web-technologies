@@ -17,7 +17,8 @@ module.exports = [
     },
     rules: {
       ...tseslint.configs.recommended.rules,
-      'prettier/prettier': 'error'
+      'prettier/prettier': 'error',
+      "no-console": 1
     }
   }
 ];
