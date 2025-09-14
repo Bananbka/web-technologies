@@ -8,7 +8,7 @@
     "start": "webpack serve --open",
     "format": "prettier --write .",
     "lint": "eslint \"src/*.{ts,js}\"",
-    "test": "npm run format && npm run lint && echo \\\"No tests yet\\\"",
+    "test": "exit 1",
     "prepare": "husky"
   },
   "repository": {
