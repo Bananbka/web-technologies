@@ -14,7 +14,11 @@ class App {
         this.searchInput = document.getElementById('search-books');
         this.booksPerPage = 5;
         this.currentPage = 1;
-        this.borrowModal = new Modal('borrowModal', 'confirmBorrow', 'closeBorrowModal');
+        this.borrowModal = new Modal(
+            'borrowModal',
+            'confirmBorrow',
+            'closeBorrowModal'
+        );
         this.init();
     }
     init() {
@@ -30,8 +34,7 @@ class App {
         const addBookForm = document.getElementById('add-book-form');
         addBookForm?.addEventListener('submit', (e) => {
             e.preventDefault();
-            if (!Validation.validateBookForm(addBookForm))
-                return;
+            if (!Validation.validateBookForm(addBookForm)) return;
             const formData = new FormData(addBookForm);
             const formObj = Object.fromEntries(formData.entries());
             const book = new Book({
@@ -46,8 +49,7 @@ class App {
         const addUserForm = document.getElementById('add-user-form');
         addUserForm?.addEventListener('submit', (e) => {
             e.preventDefault();
-            if (!Validation.validateUserForm(addUserForm))
-                return;
+            if (!Validation.validateUserForm(addUserForm)) return;
             const formData = new FormData(addUserForm);
             const formObj = Object.fromEntries(formData.entries());
             const user = new User(formObj);
@@ -69,8 +71,11 @@ class App {
         let books = LibraryService.books.items;
         const searchValue = this.searchInput?.value.toLowerCase() || '';
         if (searchValue) {
-            books = books.filter((book) => book.name.toLowerCase().includes(searchValue) ||
-                book.author.toLowerCase().includes(searchValue));
+            books = books.filter(
+                (book) =>
+                    book.name.toLowerCase().includes(searchValue) ||
+                    book.author.toLowerCase().includes(searchValue)
+            );
         }
         const start = (this.currentPage - 1) * this.booksPerPage;
         const end = start + this.booksPerPage;
@@ -101,8 +106,7 @@ class App {
             li.style.cursor = 'pointer';
             if (!book.borrowed) {
                 li.addEventListener('click', () => this.showBorrowModal(book));
-            }
-            else {
+            } else {
                 li.addEventListener('click', () => {
                     try {
                         LibraryService.returnBook(book);
@@ -110,8 +114,7 @@ class App {
                         this.renderBooks();
                         Storage.setBooksData();
                         Storage.setUsersData();
-                    }
-                    catch (e) {
+                    } catch (e) {
                         this.snackbar.show(e.message, 'danger');
                     }
                 });
@@ -122,7 +125,9 @@ class App {
     }
     renderPagination(totalBooks) {
         const paginationContainerId = 'books-pagination';
-        let paginationContainer = document.getElementById(paginationContainerId);
+        let paginationContainer = document.getElementById(
+            paginationContainerId
+        );
         if (!paginationContainer) {
             paginationContainer = document.createElement('div');
             paginationContainer.id = paginationContainerId;
@@ -191,8 +196,7 @@ class App {
             this.renderUsers();
             this.snackbar.show('Книгу видано!');
             this.borrowModal.hide();
-        }
-        catch (err) {
+        } catch (err) {
             this.snackbar.show(err.message, 'danger');
         }
     }

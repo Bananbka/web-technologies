@@ -3,8 +3,7 @@ export class Snackbar {
         let existing = document.getElementById('snackbar-container');
         if (existing) {
             this.container = existing;
-        }
-        else {
+        } else {
             this.container = document.createElement('div');
             this.container.id = 'snackbar-container';
             document.body.appendChild(this.container);
